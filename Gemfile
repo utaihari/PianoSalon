@@ -68,6 +68,5 @@ gem 'therubyracer', platforms: :ruby
 gem 'less-rails', git: 'https://github.com/MustafaZain/less-rails'
 gem 'twitter-bootstrap-rails'
 
-#editer
-gem 'react-rails'
-gem 'browserify-rails'
+# Use bower-rails
+gem 'bower-rails'
