@@ -1,0 +1,31 @@
+<%= form_for(salon) do |f| %>
+<% if salon.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(salon.errors.count, "error") %> prohibited this salon from being saved:</h2>
+
+  <ul>
+    <% salon.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= f.hidden_field :user_id, :value => current_user.id %>
+
+<%= f.select :area_id, areas.map{|t| [t.area_name, t.id]} %>
+
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_area :name %>
+</div>
+
+<div class="field">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

@@ -1,0 +1,36 @@
+
+<!-- only if you need custom infoboxes -->
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @area.area_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @area.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @area.address %>
+</p>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
+
+<div><%= link_to "部屋を追加", new_room_from_area_path(@area.id) %></div>
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Back', areas_path %>

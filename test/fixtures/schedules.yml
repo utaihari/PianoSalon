@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  salon_id: 1
+  start_time: 2017-03-18 11:23:37
+  end_time: 2017-03-18 11:23:37
+  recruitment_numbers: 1
+  notes: MyText
+
+two:
+  salon_id: 1
+  start_time: 2017-03-18 11:23:37
+  end_time: 2017-03-18 11:23:37
+  recruitment_numbers: 1
+  notes: MyText
