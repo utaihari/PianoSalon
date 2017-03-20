@@ -20,6 +20,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
+    @area = Area.find(@room.area_id)
   end
 
   # POST /rooms
@@ -70,6 +71,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:area_id, :description)
+      params.require(:room).permit(:area_id, :description, :room_name)
     end
   end

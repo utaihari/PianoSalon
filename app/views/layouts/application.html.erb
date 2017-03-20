@@ -16,7 +16,7 @@
 		<nav>
 			<%= link_to "ピアノサロン・ローズ", root_path %>
 			<% if user_signed_in? %>
-			<strong><%= link_to current_user.user_name, pages_show_path %></strong>
+			<strong><%= link_to "#{current_user.user_name}さんのマイページ" , pages_show_path %></strong>
 			<%= link_to 'プロフィール変更', edit_user_registration_path %>
 			<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 			<% else %>
@@ -25,10 +25,6 @@
 			<% end %>
 		</nav>
 	</header>
-
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-
 	<%= yield %>
 </body>
 </html>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318105751) do
+ActiveRecord::Schema.define(version: 20170320005752) do
 
   create_table "areas", force: :cascade do |t|
     t.text     "area_name"
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20170318105751) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "salon_id"
-    t.integer  "condition",  default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "schedule_id"
+    t.integer  "condition",   default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170318105751) do
 
   create_table "salons", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "name"
+    t.text     "salon_name"
     t.text     "description"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -63,9 +63,10 @@ ActiveRecord::Schema.define(version: 20170318105751) do
     t.datetime "end_time"
     t.integer  "recruitment_numbers"
     t.text     "notes"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "room_id"
+    t.text     "title",               default: ""
   end
 
   create_table "users", force: :cascade do |t|

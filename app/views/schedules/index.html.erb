@@ -2,7 +2,29 @@
 
 <h1>予定カレンダー</h1>
 
+<select name="ホール選択" id="area-select">
+	<option value="" selected="selected">ホールを選択</option>
+	<% if !@areas.blank? %>
+	<% for area in @areas %>
+	<option value=<%= area.id %>><%= area.area_name %></option>
+	<% end %>
+	<% end %>
+</select>
+
+<select name="部屋選択" id="room-select" disabled> 
+	<option value="" selected="selected">部屋を選択</option>
+	<% if !@rooms.blank? %>
+	<% for room in @rooms %>
+	<option value=<%= room.id %> data-val=<%= room.area_id %>><%= room.room_name %></option>
+	<% end %>
+	<% end %>
+</select>
 
 <br>
+<br>
+
+<div id="calendar-area">
+	<h2>部屋を選択してください</h2>
+</div>
 
 <%= link_to 'New Schedule', new_schedule_path %>

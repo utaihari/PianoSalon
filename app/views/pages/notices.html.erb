@@ -1,0 +1,25 @@
+<h2>あなた宛のお知らせ一覧</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>タイトル</th>
+			<th>開封済み</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @notices.each do |notice| %>
+		<tr>
+			<td><%= link_to notice.title, notice_path(notice.id) %></td>
+			<td>
+				<% if notice.is_checked %>
+				済
+				<% end %>
+			</td>
+			<td><%= link_to '削除', notice, method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

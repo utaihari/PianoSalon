@@ -22,7 +22,7 @@ class AreasController < ApplicationController
 
   # GET /areas/new
   def new
-    @area = Area.new
+    @area = Area.new(description: "")
   end
 
   # GET /areas/1/edit
@@ -77,6 +77,6 @@ class AreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def area_params
-      params.require(:area).permit(:name, :description, :address, :latitude, :longitude)
+      params.require(:area).permit(:area_name, :description, :address, :latitude, :longitude)
     end
   end

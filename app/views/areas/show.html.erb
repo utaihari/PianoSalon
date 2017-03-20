@@ -1,24 +1,18 @@
-
-<!-- only if you need custom infoboxes -->
-
-<p id="notice"><%= notice %></p>
-
-<p>
+<h1>
   <%= @area.area_name %>
+</h1>
+
+<p>
+  <%= raw @area.description %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @area.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
+  <strong>アクセス:</strong>
   <%= @area.address %>
 </p>
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+<div style='width: 400px;'>
+  <div id="map" style='width: 400px; height: 200px;'></div>
 </div>
 
 <script type="text/javascript">
@@ -30,7 +24,27 @@
   });
 </script>
 
-<div><%= link_to "部屋を追加", new_room_from_area_path(@area.id) %></div>
+<h2>部屋の紹介</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_area_path(@area) %> |
-<%= link_to 'Back', areas_path %>
+  <tbody>
+    <% @rooms.each do |room| %>
+    <tr>
+      <td><%= link_to room.room_name, room_path(room.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if current_user.admin %>
+<%= link_to "部屋を追加", new_room_from_area_path(@area.id) %>
+<br>
+<%= link_to '編集', edit_area_path(@area) %>
+<br>
+<% end %>
+<%= link_to '戻る', areas_path %>

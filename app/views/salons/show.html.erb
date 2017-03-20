@@ -1,19 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @salon.user_id %>
-</p>
+<% if !@salon.approval %>
+<h2>このサロンは現在承認待ちです。しばらくお待ちください。</h2>
+<% end %>
+
+<h3>
+	<%= @salon.salon_name %>
+</h3>
+<h4>
+	主催者： <%= @organizer_name %>	
+</h4>
 
 <p>
-  <strong>Name:</strong>
-  <%= @salon.name %>
+	<%= raw @salon.description %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @salon.description %>
-</p>
+<div>
+	<h4>近日中の開催予定</h4>
+	<% if !@next_schedules.blank? %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>開催日時</th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
 
-<%= link_to 'Edit', edit_salon_path(@salon) %> |
-<%= link_to 'Back', salons_path %>
+		<tbody>
+			<% @next_schedules.each do |schedule| %>
+			<tr>
+				<td><%= link_to schedule.start_time, schedule_path(schedule.id) %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<% else %>
+	<p>近日中の開催予定はありません</p>
+	<% end %>
+</div>
+
+<% if current_user.admin && !@salon.approval %>
+<%= link_to "このサロンの設立を管理するにはここをクリック", manage_path(@salon.id) %>
+<br>
+<% end %>
+<% if @salon.id == current_user.id %>
+<%= link_to '編集', edit_salon_path(@salon) %>
+<% end %>
+|
+<%= link_to '戻る', salons_path %>

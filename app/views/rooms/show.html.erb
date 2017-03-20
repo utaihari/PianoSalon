@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%= @room.room_name %></h2>
 <p>
-  <strong>Area:</strong>
-  <%= @room.area_id %>
+	<strong>部屋の紹介</strong>
+	<%= raw @room.description %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @room.description %>
-</p>
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
+<% if current_user.admin %>
+<%= link_to '編集', edit_room_path(@room) %> |
+<% end %>
 <%= link_to 'Back', rooms_path %>

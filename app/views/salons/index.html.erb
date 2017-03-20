@@ -14,18 +14,18 @@
 
   <tbody>
     <% @salons.each do |salon| %>
-      <tr>
-        <td><%= salon.user_id %></td>
-        <td><%= salon.name %></td>
-        <td><%= salon.description %></td>
-        <td><%= link_to 'Show', salon %></td>
-        <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
-        <td><%= link_to 'Destroy', salon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= salon.user_id %></td>
+      <td><%= salon.salon_name %></td>
+      <td><%= salon.description %></td>
+      <td><%= link_to 'Show', salon %></td>
+      <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
+      <td><%= link_to 'Destroy', salon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Salon', new_salon_path %>
+<%= link_to 'サロン作成', new_salon_path %>

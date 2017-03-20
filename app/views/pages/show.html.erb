@@ -1,2 +1,65 @@
 <h1><%= current_user.user_name %>さんのマイページ</h1>
-<p>Find me in app/views/pages/show.html.erb</p>
+
+<h4>新着お知らせ</h4>
+<% if !@notices.blank? %>
+<table class="table">
+	<thead>
+		<tr>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @notices.each do |notice| %>
+		<tr>
+			<td><%= link_to notice.title, notice_path(notice.id) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% else %>
+<p>新しいお知らせはありません</p>
+<% end %>
+<%= link_to "すべてのお知らせ", notices_path %>
+<br>
+
+<% if current_user.admin %>
+<% if !@unapproved_sarons.blank? %>
+<h2>未認可のサロン</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @unapproved_sarons.each do |salon| %>
+		<tr>
+			<td><%= link_to salon.salon_name, salon_path(salon.id) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>
+<% end %>
+<br>
+
+<% if !@my_salons.blank? %>
+<h2>あなたのサロン</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @my_salons.each do |salon| %>
+		<tr>
+			<td><%= link_to salon.salon_name, salon_path(salon.id) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>

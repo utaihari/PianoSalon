@@ -13,19 +13,27 @@
 
 <%= f.hidden_field :user_id, :value => current_user.id %>
 
-<%= f.select :area_id, areas.map{|t| [t.area_name, t.id]} %>
-
 <div class="field">
-  <%= f.label :name %>
-  <%= f.text_area :name %>
+  <%= f.label :場所 %>
+  <%= f.select :area_id, areas.map{|t| [t.area_name, t.id]} %>
+</div>
+<div class="field">
+  <%= f.label :名前 %>
+  <%= f.text_area :salon_name %>
 </div>
 
 <div class="field">
-  <%= f.label :description %>
+  <%= f.label :サロンの説明 %>
   <%= f.text_area :description %>
 </div>
 
 <div class="actions">
-  <%= f.submit %>
+  <%= f.submit "サロンの設立を申請する"%>
 </div>
 <% end %>
+
+<script>
+ $(function() {
+   $('#salon_description').froalaEditor();
+ });
+</script>

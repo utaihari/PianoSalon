@@ -5,4 +5,5 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :salons, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 end

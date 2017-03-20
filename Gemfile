@@ -70,3 +70,6 @@ gem 'twitter-bootstrap-rails'
 
 # Use bower-rails
 gem 'bower-rails'
+#editor
+gem 'wysiwyg-rails'
+gem "font-awesome-rails"

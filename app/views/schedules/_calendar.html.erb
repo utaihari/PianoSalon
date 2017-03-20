@@ -10,12 +10,22 @@
 			},
 			navLinks: true, // can click day/week names to navigate views
 			editable: true,
+			events: [
+			<% schedules.each do |schedule| %>
+			{
+				id: "<%= schedule.id %>"
+				title:  "<%= schedule.title %>",
+				start: "<%= schedule.start_time.to_s(:db) %>",
+				end: "<%= schedule.end_time.to_s(:db) %>"
+			}
+
+			<% end %>
+
+			]
 		});
 		
 	});
 
 </script>
-
-
-
+<p><%= room.room_name %>のスケジュールカレンダー</p>
 <div id="calendar"></div>

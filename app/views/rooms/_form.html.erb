@@ -13,13 +13,12 @@
 
 <%= f.hidden_field :area_id, :value => @area.id %>
 
-<div class="field">
-  <%= f.label :area_id %>
-  <%= f.number_field :area_id %>
-</div>
+<%= f.label :部屋の名前 %>
+<%= f.text_field :room_name %>
 
+<br>
 <div class="field">
-  <%= f.label :description %>
+  <%= f.label :部屋の紹介 %>
   <%= f.text_area :description %>
 </div>
 
@@ -27,3 +26,9 @@
   <%= f.submit %>
 </div>
 <% end %>
+
+<script>
+ $(function() {
+   $('#room_description').froalaEditor();
+ });
+</script>

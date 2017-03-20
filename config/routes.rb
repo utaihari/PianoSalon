@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-	get '/schedules/calendar', to: 'schedules#calendar', as:'schedules_calender'
+  resources :reservations
+	get '/schedules/calendar/:room_id', to: 'schedules#calendar', as:'calendar'
+	get '/schedules/get_schedules/:room_id', to:'schedules#get_schedules'
+
+	get '/pages/notices', to: 'pages#notices', as:'notices'
+	get '/pages/notice/:id', to: 'pages#notice_show', as:'notice'
+	delete '/pages/notice/:id', to: 'pages#notice_destroy'
+
+	get '/salons/manage/:id', to: 'salons#manage', as:'manage'
+	post '/salons/manage_update', to: 'salons#manage_update', as:'manage_update'
 
 	resources :rooms
 	resources :areas

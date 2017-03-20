@@ -4,12 +4,14 @@ class SalonsController < ApplicationController
   # GET /salons
   # GET /salons.json
   def index
-    @salons = Salon.all
+    @salons = Salon.where(approval: true)
   end
 
   # GET /salons/1
   # GET /salons/1.json
   def show
+    @organizer_name = User.find(@salon.user_id).user_name
+    @next_schedules = Schedule.where(salon_id: @salon.id, start_time: Time.zone.today .. Time.zone.today.next_month)
   end
 
   # GET /salons/new
@@ -63,6 +65,41 @@ class SalonsController < ApplicationController
     end
   end
 
+  def manage
+    if !current_user.admin
+      format.html { redirect_to @salon, notice: '管理者ではありません' }
+      format.json { render :show, status: :ok, location: @salon }
+    end
+    @notice = Notice.new(description: "")
+    @salon = Salon.find(params[:id])
+    @user_id = @salon.user_id
+  end
+
+  def manage_update
+    if !current_user.admin
+      format.html { redirect_to @salon, notice: '管理者ではありません' }
+      format.json { render :show, status: :ok, location: @salon }
+    end
+
+    description = params[:notice][:description]
+    title = params[:notice][:title]
+    user_id = params[:notice][:user_id]
+
+    Notice.create(description: description, title: title, user_id: user_id)
+
+    @salon = Salon.find(params[:salon][:id])
+    if params[:salon][:approval]
+      @salon.approval = true
+      @salon.save
+      format.html { redirect_to @salon, notice: 'Salon was successfully updated.' }
+      format.json { render :show, status: :ok, location: @salon }
+    else
+      @salon.delete
+      format.html { redirect_to salons_url, notice: '申請を削除しました' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_salon
@@ -71,6 +108,8 @@ class SalonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def salon_params
-      params.require(:salon).permit(:user_id, :name, :description)
+      params.require(:salon).permit(:id, :user_id, :salon_name, :description, :area_id, :approval)
+      params.require(:notice).permit(:user_id, :title, :description)
+
     end
   end

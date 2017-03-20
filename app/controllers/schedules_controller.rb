@@ -5,6 +5,8 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     @schedules = Schedule.all
+    @rooms = Room.all
+    @areas = Area.all
   end
 
   # GET /schedules/1
@@ -13,11 +15,17 @@ class SchedulesController < ApplicationController
   end 
 
   def calendar
+    @room = Room.find(params[:room_id])
+    @schedules = Schedule.where(room_id: params[:room_id], start_time: Time.zone.today .. Time.zone.today.next_month.next_month)
   end
 
   # GET /schedules/new
   def new
-    @schedule = Schedule.new
+    @salon = Salon.new
+    if params[:salon_id] != nil
+      @salon = Salon.find(params[:salon_id])
+    end
+    @schedule = Schedule.new(:title @salon.salon_name)
   end
 
   # GET /schedules/1/edit
@@ -62,6 +70,16 @@ class SchedulesController < ApplicationController
       format.html { redirect_to schedules_url, notice: 'Schedule was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def get_schedules
+    room_id = params[:room_id]
+    schedules = Schedule.where(room_id: room_id)
+    output = []
+    schedules.each { |s|
+      output.push(s)
+    }
+    render :json => output.to_json
   end
 
   private

@@ -3,5 +3,5 @@
 
 #asset 'bootstrap'
 
-asset 'medium-editor'
+#asset 'medium-editor'
 #asset 'medium-editor-insert-plugin'
