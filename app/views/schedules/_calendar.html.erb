@@ -1,7 +1,6 @@
 <script>
-
 	$(document).ready(function() {
-		
+
 		$('#calendar').fullCalendar({
 			header: {
 				left: 'prev,next today',
@@ -13,17 +12,32 @@
 			events: [
 			<% schedules.each do |schedule| %>
 			{
-				id: "<%= schedule.id %>"
+				id: "<%= schedule.id %>",
 				title:  "<%= schedule.title %>",
 				start: "<%= schedule.start_time.to_s(:db) %>",
 				end: "<%= schedule.end_time.to_s(:db) %>"
 			}
-
 			<% end %>
 
-			]
-		});
-		
+			],
+			dayClick: function(date, jsEvent, view) {
+				<% if @has_salon %>
+				window.location.href = "/schedules/new/"+ date.format();
+				<% else %>
+				<% end %>
+			},
+			eventClick: function(calEvent, jsEvent, view) {
+
+				alert('Event: ' + calEvent.title);
+				alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+				alert('View: ' + view.name);
+				window.location.href = "/schedules/"+ calEvent.id;
+
+        		// change the border color just for fun
+        		$(this).css('border-color', 'red');
+
+        	}
+        });
 	});
 
 </script>

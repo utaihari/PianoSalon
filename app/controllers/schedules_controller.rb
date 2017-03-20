@@ -12,20 +12,24 @@ class SchedulesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
-  end 
+    @salon = Salon.find(@schedule.salon_id)
+    @current_reservations = Reservation.where(schedule_id: @schedule.id).count.to_i
+    @is_closed = 1 > (@schedule.recruitment_numbers.to_i - Reservation.where(schedule_id: @schedule.id, condition: 1).count.to_i)
+  end
 
   def calendar
     @room = Room.find(params[:room_id])
-    @schedules = Schedule.where(room_id: params[:room_id], start_time: Time.zone.today .. Time.zone.today.next_month.next_month)
+    @schedules = Schedule.where(room_id: params[:room_id], \
+      start_time: Time.zone.today .. Time.zone.today.next_month.next_month)
+    @has_salon = Salon.exists?(current_user.id)
   end
 
   # GET /schedules/new
   def new
-    @salon = Salon.new
-    if params[:salon_id] != nil
-      @salon = Salon.find(params[:salon_id])
-    end
-    @schedule = Schedule.new(:title @salon.salon_name)
+    @salons = Salon.where(user_id: current_user.id)
+    @time = Time.parse(params[:datetime])
+    @schedule = Schedule.new(start_time: @time.to_s(:db), end_time: (@time + 1.hour).to_s(:db), \
+     title: @salons[0].salon_name)
   end
 
   # GET /schedules/1/edit
@@ -36,7 +40,10 @@ class SchedulesController < ApplicationController
   # POST /schedules.json
   def create
     @schedule = Schedule.new(schedule_params)
-
+    if schedule_overlapping?(@schedule.salon_id, @schedule.start_time, @schedule.end_time)
+      format.html { render :new }
+      format.json { render json: @schedule.errors, status: :unprocessable_entity }
+    end
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
@@ -91,5 +98,15 @@ class SchedulesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
       params.require(:schedule).permit(:salon_id, :start_time, :end_time, :recruitment_numbers, :notes)
+    end
+
+    def schedule_overlapping?(room_id, start_time, end_time)
+      schedules = Schedule.where(room_id: room_id, start_time: start_time - 1.day .. start_time + 1.day )
+      schedules.each { |schedule|
+        if start_time <= schedule.start_time && end_time >= schedule.end_time
+          return true
+        end
+      }
+      return false
     end
   end

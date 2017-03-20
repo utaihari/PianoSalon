@@ -28,5 +28,8 @@ $( ->
 
 	$children.change ->
 		$.get("/schedules/calendar/#{$(this).val()}")
-
+		return
+	$('#schedule_salon_id').change ->
+		$('#schedule_title').val($('#schedule_salon_id').text())
+		return
 )

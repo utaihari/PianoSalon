@@ -11,7 +11,7 @@
 	<% end %>
 </select>
 
-<select name="部屋選択" id="room-select" disabled> 
+<select name="部屋選択" id="room-select" disabled>
 	<option value="" selected="selected">部屋を選択</option>
 	<% if !@rooms.blank? %>
 	<% for room in @rooms %>
@@ -26,5 +26,3 @@
 <div id="calendar-area">
 	<h2>部屋を選択してください</h2>
 </div>
-
-<%= link_to 'New Schedule', new_schedule_path %>

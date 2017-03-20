@@ -4,8 +4,56 @@
 		"selected_items":
 		[
 			[
+				"res",
+				"reservations\t(routes.rb)"
+			],
+			[
+				"re",
+				"registrations"
+			],
+			[
 				"sche",
+				"schedule\t(index.html.erb)"
+			],
+			[
+				"sc",
 				"schedules\t(routes.rb)"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"ca",
+				"calender\t(routes.rb)"
+			],
+			[
+				"start",
+				"start_time"
+			],
+			[
+				"ne",
+				"next_month"
+			],
+			[
+				"next",
+				"next_month\t(pages_controller.rb)"
+			],
+			[
+				"to",
+				"today\t(pages_controller.rb)"
+			],
+			[
+				"sta",
+				"start_time"
+			],
+			[
+				"end",
+				"end_time\t(schedules_controller.rb)"
+			],
+			[
+				"get",
+				"get_schedules"
 			],
 			[
 				"sa",
@@ -63,7 +111,7 @@
 			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 846,
+				"buffer_size": 1007,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -87,46 +135,10 @@
 			}
 		},
 		{
-			"file": "app/views/pages/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 748,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/views/rooms/_form.html.erb",
 			"settings":
 			{
 				"buffer_size": 646,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/rooms_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1886,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/rooms/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 85,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/rooms/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 247,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -141,15 +153,6 @@
 			}
 		},
 		{
-			"file": "app/views/salons/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 658,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/controllers/areas_controller.rb",
 			"settings":
 			{
@@ -159,108 +162,54 @@
 			}
 		},
 		{
-			"file": "app/views/areas/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 964,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/schedules/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 595,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/schedules_controller.rb",
-			"settings":
-			{
-				"buffer_size": 2059,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/schedules.coffee",
-			"settings":
-			{
-				"buffer_size": 833,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nBetter CoffeeScript\n-------------------\n\n  [![Project Status](http://stillmaintained.com/aponxi/sublime-better-coffeescript.png)](http://stillmaintained.com/aponxi/sublime-better-coffeescript)\n  \n  \n  \t                                         __\n  \t   __     _____     ___     ___    __  _/\\_\\\n  \t /'__`\\  /\\ '__`\\  / __`\\ /' _ `\\ /\\ \\/'\\/\\ \\\n  \t/\\ \\L\\.\\_\\ \\ \\L\\ \\/\\ \\L\\ \\/\\ \\/\\ \\\\/>  </\\ \\ \\\n  \t\\ \\__/.\\_\\\\ \\ ,__/\\ \\____/\\ \\_\\ \\_\\/\\_/\\_\\\\ \\_\\\n  \t \\/__/\\/_/ \\ \\ \\/  \\/___/  \\/_/\\/_/\\//\\/_/ \\/_/\n  \t            \\ \\_\\\n  \t             \\/_/\n  \n  \n  \t ____            __    __\n  \t/\\  _`\\         /\\ \\__/\\ \\__\n  \t\\ \\ \\L\\ \\     __\\ \\ ,_\\ \\ ,_\\    __   _ __\n  \t \\ \\  _ <'  /'__`\\ \\ \\/\\ \\ \\/  /'__`\\/\\`'__\\\n  \t  \\ \\ \\L\\ \\/\\  __/\\ \\ \\_\\ \\ \\_/\\  __/\\ \\ \\/\n  \t   \\ \\____/\\ \\____\\\\ \\__\\\\ \\__\\ \\____\\\\ \\_\\\n  \t    \\/___/  \\/____/ \\/__/ \\/__/\\/____/ \\/_/\n  \n  \n  \t\t\t                ___    ___                                                __\n  \t\t\t              /'___\\ /'___\\                                    __        /\\ \\__\n  \t\t\t  ___    ___ /\\ \\__//\\ \\__/   __     __    ____    ___   _ __ /\\_\\  _____\\ \\ ,_\\\n  \t\t\t /'___\\ / __`\\ \\ ,__\\ \\ ,__\\/'__`\\ /'__`\\ /',__\\  /'___\\/\\`'__\\/\\ \\/\\ '__`\\ \\ \\/\n  \t\t\t/\\ \\__//\\ \\L\\ \\ \\ \\_/\\ \\ \\_/\\  __//\\  __//\\__, `\\/\\ \\__/\\ \\ \\/ \\ \\ \\ \\ \\L\\ \\ \\ \\_\n  \t\t\t\\ \\____\\ \\____/\\ \\_\\  \\ \\_\\\\ \\____\\ \\____\\/\\____/\\ \\____\\\\ \\_\\  \\ \\_\\ \\ ,__/\\ \\__\\\n  \t\t\t \\/____/\\/___/  \\/_/   \\/_/ \\/____/\\/____/\\/___/  \\/____/ \\/_/   \\/_/\\ \\ \\/  \\/__/\n  \t\t\t                                                                      \\ \\_\\\n  \t\t\t                                                                       \\/_/\n  \n  # Jump to Section\n  \n  * [Latest Change Log](#latest-changelog)\n  * [FAQ](#faq)\n  * [Installation](#installation)\n  * [Updating](#updating)\n  * [Commands/Shortcuts](#commandsshortcuts)\n  * [Snippets](#snippets)\n  * [Building](#building)\n  * [Settings](#settings)\n  * [Special Thanks](#special-thanks)\n  \n  \n  # Overview\n  \n  **This package is for Sublime Text 3**. If you are looking for Sublime Text 2, then please refer to [st2 branch here](https://github.com/aponxi/sublime-better-coffeescript/tree/st2).\n  \n  ## Description\n  \n  CoffeeScript plug-in was originally created by @Xavura. As I began writing a lot of code in CoffeeScript, I felt the need for side-by-side view for compiled CoffeeScript. Since Xavura's repository have been inactive I decided to branch out my own version. The biggest change in my branch is the Watch Mode which updates the compiled JavaScript view whenever you modify the CoffeeScript thus enabling you to view your progress side-by-side.\n  \n  I use this plug-in almost everyday! Therefore, whenever I am not developing I am in testing. I'll do my best to make sure every request or bug will be answered since I'm a frequent user.\n  \n  ## Contributing\n  \n  - Please use [aponxi/issues page](https://github.com/aponxi/sublime-better-coffeescript/issues) to make requests or report bugs.\n  - Please make _pull requests_ to the respective branch (`master` branch is for Sublime Text 3, `st2` branch is for Sublime Text 2.)\n  \n  # Installation\n  \n  ## via Package Control\n  \n  > This is the recommended installation method.\n  \n  If you have [Sublime Package Control](https://sublime.wbond.net/), you know what to do. If not, well: it's a package manager for Sublime Text 3. Installation guide can be [found here](https://sublime.wbond.net/installation).  After installing the package manager:\n  \n  * Open the Command Pallete (`ctrl+shift+P` or `cmd+shift+P`).\n  * Type \"Install Package\" and hit return.\n  * Type \"Better CoffeeScript\" and hit return.\n  \n  ## via Source Control\n  \n  > If you plan to contribute, then you should install via this method. Otherwise it is recommended that you install the package via Package Control, see above.\n  \n  Sublime stores packages in the following locations:\n  \n  \tNix: ~/.config/sublime-text-3/packages\n  \tMac: ~/Library/Application\\ Support/Sublime\\ Text\\ 3/Packages\n  \tWin: %APPDATA%\\Sublime Text 3\\Packages\n  \n  ### As a repository within the packages directory\n  \n  Open a Terminal/Console and run the following commands, replacing `PACKAGE_PATH` with the path corresponding to your OS above.\n  \n  \tcd PACKAGE_PATH\n  \tgit clone https://github.com/aponxi/sublime-better-coffeescript.git \"Better CoffeeScript\"\n  \n  ### As a repository outside of the packages directory\n  \n  If you use Github for Mac/Windows which store repositories in a specific location, or if you just don't want a repository in your packages directory, then instead you can use a link.\n  \n  If you don't yet have the repository, then grab it via your GUI program or via the command line:\n  \n  \tcd WHEREVER_YOU_WANT\n  \tgit clone https://github.com/aponxi/sublime-better-coffeescript.git\n  \n  Once that is done, we will create the link:\n  \n  #### Windows:\n  \n  \tcd PACKAGE_PATH\n  \tmklink /D \"Better CoffeeScript\" ABSOLUTE_PATH_TO_REPOSITORY\n  \n  #### Nix/Mac:\n  \n  \tcd PACKAGE_PATH\n  \tln -s ABSOLUTE_PATH_TO_REPOSITORY \"Better CoffeeScript\"\n  \n  #### A note on Package Control\n  \n  When Package Control tries to update your packages, if you have a repository in your packages directory then it will try to pull down and merge any changes. If you don't want this to happen and would rather handle everything yourself, then you can add the following to your settings (Preferences » Package Settings » Package Control » Settings - User):\n  \n  \t\"auto_upgrade_ignore\": [\"Better CoffeeScript\"]\n  \n  # Updating\n  \n  If you are using Package Control, updating will be automatic and you don't have to worry about it.\n  \n  If using Source Control:\n  \n  \tcd \"PACKAGE_PATH/Better CoffeeScript\"\n  \tgit fetch origin\n  \tgit merge origin/master\n  \n  # Commands/Shortcuts\n  \n  You can access the commands either using the command palette (`ctrl+shift+P` or `cmd+shift+P`) or via shortcuts.\n  \n  \talt+shift+t - Run a Cake task\n  \talt+shift+r - Run some CoffeeScript (prints output to a panel on the bottom)\n  \talt+shift+s - Run a syntax check\n  \talt+shift+c - Compile a file\n  \talt+shift+d - Display compiled JavaScript\n  \talt+shift+l - Display lexer tokens\n  \talt+shift+n - Display parser nodes\n  \talt+shift+w - Toggle watch mode\n  \talt+shift+p - Toggle output panel\n  \n  \n  Context menu has `Compile Output` that compiles the current CoffeeScript and outputs the javascript code that is run, in a panel.\n  \n  **Note:** Some of the commands use the Status Bar for output, so you'll probably want to enable it (View » Show Status Bar).\n  \n  \n  \n  # Snippets\n  \n  - Use `TAB` to run a snippet after typing the trigger.\n  - Use `TAB` and `shift+TAB` to cycle forward/backward through fields.\n  - Use `ESC` to exit snippet mode.\n  \n  ### Snippet Triggers\n  \n  **Comprehension**\n  \n  \tArray:  forin\n  \tObject: forof\n  \tRange:  fori (inclusive)\n  \tRange:  forx (exclusive)\n  \n  **Statements**\n  \n  \tIf:        if\n  \tElse:      el\n  \tIf Else:   ifel\n  \tElse If:   elif\n  \tSwitch:    swi\n  \tTernary:   ter\n  \tTry Catch: try\n  \tUnless:    unl\n  \n  **Classes**\n  \n  \tClass - cla\n  \tClass extends SuperClass - clx\n  \n  **Other**\n  \n  \tFunction:      -\n  \tFunction:      = (bound)\n  \tInterpolation: #\n  \n  # Building\n  \n  > When using the build system, it is assumed that your `.sublime-project` file lives in your project's base directory (due to limitations with the build system).\n  \n  Hitting `F7` (Tools » Build) will run the Cake task 'sbuild'.\n  \n  If you're not quite sure what the point of this is then read on.\n  \n  Let's say before distributing your project that you would like to combine all of your `.js` files into one and then minify them them using UglifyJS or something.\n  \n  That's what this is for! You would create a `Cakefile` and inside it you would write a task:\n  \n  \ttask 'sbuild', 'Prepare project for distribution.', ->\n  \t\t# ...\n  \n  # Settings\n  \n  Go to `Preferences > Package Settings > Better CoffeeScript > Settings - User` to change settings.\n  \n  ```Javascript\n  {\n  \t/*\n  \t\tThe directories you would like to include in $PATH environment variable.\n  \t\tUse this if your node installation is at a separate location and getting errors such as `cannot find node executable`\n  \n  \t\texample:\n  \t\t\"envPATH\": \"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\n  \n  \t*/\n  \t\"envPATH\": \"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n  \t/*\n  \t\tThe directory containing your coffee binary. Usually\n  \t\t/usr/local/bin.\n  \t*/\n  \t\"binDir\": \"/usr/local/bin\"\n  \n  \t/*\n  \t\tCompile without the top-level function wrapper (coffee -b).\n  \t*/\n  \n  ,\t\"noWrapper\": true\n  \n  \t/*\n  \t\tEnable or disable refresh the compiled Output on Save.\n  \t\tOnly available for watch mode.\n  \t*/\n  ,\t\"watchOnSave\": true\n  \t/*\n  \t\tEnable refreshing compiled JS when CoffeeScript is modified.\n  \n  \t\tPut false to disable\n  \t\tPut a number of seconds to delay the refresh\n  \t*/\n  ,\t\"watchOnModified\": 0.5\n  \t/*\n  \t\tEnable Compiling on save. It will compile into the same folder.\n  \t*/\n  ,\t\"compileOnSave\": true\n  \t/*\n  \t\t## Enable outputting the results of the compiled coffeescript in a panel\n  \t*/\n  ,\t\"showOutputOnSave\": false\n  \t/*\n  \t\t## Enable compiling to a specific directory.\n  \t\t#### Description\n  \n  \t\tif it is a string like 'some/directory' then `-o some/directory` will be added to `coffee` compiler.\n  \t\tif it is false or not string then it will compile your `script.coffee` to the directory it is in.\n  \n  \t\t#### Example:\n  \t\tDirectory is relative to the file you are editing if specified such as\n  \t\t\tcompileDir\": \"out\"\n  \t\tDirectory is absolute if specified such as\n  \t\t\tcompileDir\": \"/home/logan/Desktop/out\"\n  \n  \t*/\n  ,\t\"compileDir\": false\n  \t/*\n  \t\t## Enable compiling to a specific relative directories.\n  \n  \t\t#### Example:\n  \t\tSet absolute path for compile dir:\n  \t\t\t\"compileDir\": \"/home/user/projects/js\"\n  \t\tAnd specified folders\n  \t\t\t\"relativeDir\": \"/home/user/projects/coffee\"\n  \t\t\t\"compilePaths\":\n  \t\t\t{\n  \t\t\t\t\"/home/user/projects/coffee\": \"/home/user/projects/first/js\",\n  \t\t\t\t\"/home/user/projects/second/coffee\": \"../js\",\n  \t\t\t}\n  \n  \t\tSo\n  \t\t\t\"/home/user/projects/coffee/app.coffee\" will compile to \"/home/user/projects/first/js/app.js\"\n  \t\t\t\"/home/user/projects/coffee/models/prod.coffee\" will compile to \"/home/user/projects/first/js/models/prod.js\"\n  \t\t\t\"/home/user/projects/coffee/second/coffee/app2.coffee\" will compile to \"/home/user/projects/second/js/app2.js\"\n  \t\t\t\"/home/user/projects/main.coffee\" will compile to \"/home/user/projects/js/main.js\"\n  \n  \t*/\n  ,\t\"compilePaths\": false\n  \n  \n  \n  }\n  \n  \n  ```\n  \n  ## Project settings\n  \n  Go to `Project > Edit Project` to change project settings.\n  \n  ```Javascript\n  {\n  \t\"folders\":\n  \t[\n  \t\t...\n  \t],\n  \t\"settings\":\n  \t{\n  \t\t\"CoffeeScript\":\n  \t\t{\n  \t\t\t\"noWrapper\": true,\n  \t\t\t\"compileOnSave\": true,\n  \t\t\t\"compileDir\": \"out\"\n  \t\t}\n  \t}\n  }\n  \n  \n  \n  ```\n  \n  # FAQ\n  \n  Most of the linux terminal commands written here can be run via [cygwin](http://cygwin.com/install.html) - aka Linux Terminal in Windows.\n  \n  - Most of the problems are related to configurations. Remember to configure `binDir` after you install!\n  \n  \n  - Do I have coffee-script installed?\n  \n  Try finding coffee-script in your global npm list with `npm ls -g | grep coffee` which will output something like:\n  \n  ```bash\n  npm ls -g | grep coffee\n  \n  # will output:\n  #├── coffee-script@1.6.3\n  #├─┬ coffeelint@0.5.6\n  #│ ├── coffee-script@1.6.3\n  #├── UNMET DEPENDENCY generator-coffee *\n  #│ │ ├── coffee-script@1.3.3\n  ```\n  \n  \n  - Where can I find out the path to coffee binary?\n  \n  In Linux `which` command will tell you where a command originates from. In terminal type:\n  \n  ```bash\n  which coffee\n  # /usr/bin/coffee\n  ```\n  \n  This path will go into the `binDir` setting.\n  \n  - I'm getting the error message `'coffee' is not recognized as an internal or external command,` when saving.\n  \n  The coffee-script binary probably is not installed. Either install coffee-script or set `checkSyntaxOnSave` and `compileOnSave` to `false` in `Preferences > Package Settings > Better CoffeeScript > Settings - User`.\n  \n  \n  \n  # Latest Changelog\n  ### v0.7.0 01/June/2013\n  \n  - merged st3 with master branch\n  - now the sublime text 2 support is in st2 branch\n  - fixed the @ highlight in language definitions\n  - fixed an error you would get when it was looking for project settings when it wasn't a project we were editing\n  \n  # Special Thanks\n  \n  \n  Thanks to everyone who has contributed to this project. You guys rock! \n  \n  * [agibsonsw](https://github.com/agibsonsw) for his help in writing WatchMode\n  \n  * [Xavura](https://github.com/Xavura) for writing the base of this plugin and contributing 56 commits / 1,951 ++ / 406 --\n  \n  * [@lavrton](https://github.com/lavrton) for helping with moderation as well as ontributing 39 commits / 5,009 ++ / 857 --\n  \n  * [@markalfred](https://github.com/markalfred) for contributing 6 commits / 90 ++ / 48 --\n  \n  * [@exromany](https://github.com/exromany) for contributing 5 commits / 71 ++ / 31 --\n  \n  * [@DaQuirm](https://github.com/DaQuirm) for contributing 3 commits / 42 ++ / 23 --\n  \n  * [@ehuss](https://github.com/ehuss) for contributing 2 commits / 2 ++ / 2 --\n  \n  * [@donovanhide](https://github.com/donovanhide) for contributing 2 commits / 16 ++ / 16 --\n  \n  * [@SunLn](https://github.com/SunLn) for contributing 2 commits / 5 ++ / 5 --\n  \n  * [@mekf](https://github.com/mekf) for contributing 2 commits / 15 ++ / 2 --\n  \n  * [@pyrotechnick](https://github.com/pyrotechnick) for contributing 2 commits / 4 ++ / 3 --\n  \n  * [@samtsai](https://github.com/samtsai) for contributing 2 commits / 6 ++ / 6 --\n  \n  * [@szhu](https://github.com/szhu) for contributing 2 commits / 18 ++ / 15 --\n  \n  * [@johnogle222](https://github.com/johnogle222) for contributing 1 commit / 7 ++ / 0 --\n  \n  * [@arjansingh](https://github.com/arjansingh) for contributing 1 commit / 8 ++ / 4 --\n  \n  * [@stared](https://github.com/stared) for contributing 1 commit / 1 ++ / 1 --\n  \n  * [@tomByrer](https://github.com/tomByrer) for contributing 1 commit / 1 ++ / 13 --\n  \n  * [@ppvg](https://github.com/ppvg) for contributing 1 commit / 20 ++ / 27 --\n  \n  * [@TurtlePie](https://github.com/TurtlePie) for contributing 1 commit / 1 ++ / 1 --\n  \n  * [@FichteFoll](https://github.com/FichteFoll) for contributing 1 commit / 8 ++ / 5 --\n  \n  * [@daytonn](https://github.com/daytonn) for contributing 1 commit / 1 ++ / 1 --\n  \n  * [@mfkp](https://github.com/mfkp) for contributing 1 commit / 1 ++ / 1 --\n  \n  * [@btmills](https://github.com/btmills) for contributing 1 commit / 3 ++ / 1 --\n  \n  * [@Whoaa512](https://github.com/Whoaa512) for contributing 1 commit / 2 ++ / 2 --\n  \n  * [@alexdowad](https://github.com/alexdowad) for contributing 1 commit / 8 ++ / 2 --\n  \n  * [@Cryrivers](https://github.com/Cryrivers) for contributing 1 commit / 1 ++ / 1 --\n  \n  * [@wbond](https://github.com/wbond) for contributing 1 commit / 4 ++ / 4 --\n  \n  * [@nouveller](https://github.com/nouveller) for contributing 1 commit / 0 ++ / 1 --\n  \n  * [@larvata](https://github.com/larvata) for contributing 1 commit / 11 ++ / 11 --\n  \n  * [@ashtuchkin](https://github.com/ashtuchkin) for contributing 1 commit / 36 ++ / 7 --\n  \n  * [@philippotto](https://github.com/philippotto) for contributing 1 commit / 28 ++ / 1 --\n  \n  * [@mattschofield](https://github.com/mattschofield) for contributing 1 commit / 19 ++ / 0 --\n  \n  * [@Mitranim](https://github.com/Mitranim) for contributing 1 commit / 1 ++ / 1 --\n  \n  * [@osuushi](https://github.com/osuushi) for contributing 1 commit / 10 ++ / 2 --\n  \n  * [@radcool](https://github.com/radcool) for contributing 1 commit / 2 ++ / 2 --\n  \n  * [@FredyC](https://github.com/FredyC) for contributing 1 commit / 1 ++ / 1 --\n  \n  _Written in Q3 2014_\n\n\nSublimeLinter-coffeelint\n------------------------\n\n  SublimeLinter-coffeelint\n  -------------------------------\n  This linter plugin for SublimeLinter provides an interface to coffeelint.\n  \n  ** IMPORTANT! **\n  \n  Before this plugin will activate, you *must*\n  follow the installation instructions here:\n  \n  https://github.com/SublimeLinter/SublimeLinter-coffeelint\n\n\nSublimeLinter\n-------------\n\n  \n    ____        _     _ _                _     _       _\n   / ___| _   _| |__ | (_)_ __ ___   ___| |   (_)_ __ | |_ ___ _ __\n   \\___ \\| | | | '_ \\| | | '_ ` _ \\ / _ \\ |   | | '_ \\| __/ _ \\ '__|\n    ___) | |_| | |_) | | | | | | | |  __/ |___| | | | | ||  __/ |\n   |____/ \\__,_|_.__/|_|_|_| |_| |_|\\___|_____|_|_| |_|\\__\\___|_|\n  \n  \n  Welcome to SublimeLinter, a linter framework for Sublime Text 3.\n  \n                   * * * IMPORTANT! * * *\n  \n          SublimeLinter 3 is NOT a drop-in replacement for\n          earlier versions.\n  \n          Linters *NOT* included with SublimeLinter 3, \n          they must be installed separately.\n  \n          The settings are different.\n  \n                  * * * READ THE DOCS! * * *\n  \n  Otherwise you will never know how to install linters, nor will\n  you know about all of the great new features in SublimeLinter 3.\n  \n  For complete documentation on how to install and use SublimeLinter,\n  please see:\n  \n  http://www.sublimelinter.com\n  \n  \n                   _   _      _       _\n                  | | | | ___| |_ __ | |\n                  | |_| |/ _ \\ | '_ \\| |\n                  |  _  |  __/ | |_) |_|\n                  |_| |_|\\___|_| .__/(_)\n                               |_|\n  \n  \n  Hundreds of hours have been spent writing and documenting SublimeLinter\n  to make it the best it can be — easy to use, easy to configure,\n  easy to update, easy to extend. If you use SublimeLinter and feel\n  it is making your coding life better and easier, please consider\n  making a donation to help fund development and support.\n  \n  To donate: https://github.com/SublimeLinter/SublimeLinter3#share-the-love\n  \n  Thank you!\n",
-			"settings":
-			{
-				"buffer_size": 17845,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
 			"file": "app/views/schedules/_calendar.html.erb",
 			"settings":
 			{
-				"buffer_size": 332,
+				"buffer_size": 1063,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/rooms/index.html.erb",
+			"file": "app/views/schedules/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 595,
+				"buffer_size": 493,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/user.rb",
+			"contents": "class SchedulesController < ApplicationController\n  before_action :set_schedule, only: [:show, :edit, :update, :destroy]\n\n  # GET /schedules\n  # GET /schedules.json\n  def index\n    @schedules = Schedule.all\n    @rooms = Room.all\n    @areas = Area.all\n  end\n\n  # GET /schedules/1\n  # GET /schedules/1.json\n  def show\n    @salon = Salon.find(@schedule.salon_id)\n    @current_reservations = Reservation.where(schedule_id: @schedule.id)\n    @\n  end\n\n  def calendar\n    @room = Room.find(params[:room_id])\n    @schedules = Schedule.where(room_id: params[:room_id], \\\n      start_time: Time.zone.today .. Time.zone.today.next_month.next_month)\n\n  end\n\n  # GET /schedules/new\n  def new\n    @salon = Salon.new\n    if params[:salon_id] != nil\n      @salon = Salon.find(params[:salon_id])\n    end\n    @schedule = Schedule.new(title: @salon.salon_name)\n  end\n\n  # GET /schedules/1/edit\n  def edit\n  end\n\n  # POST /schedules\n  # POST /schedules.json\n  def create\n    @schedule = Schedule.new(schedule_params)\n\n    respond_to do |format|\n      if @schedule.save\n        format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }\n        format.json { render :show, status: :created, location: @schedule }\n      else\n        format.html { render :new }\n        format.json { render json: @schedule.errors, status: :unprocessable_entity }\n      end\n    end\n  end\n\n  # PATCH/PUT /schedules/1\n  # PATCH/PUT /schedules/1.json\n  def update\n    respond_to do |format|\n      if @schedule.update(schedule_params)\n        format.html { redirect_to @schedule, notice: 'Schedule was successfully updated.' }\n        format.json { render :show, status: :ok, location: @schedule }\n      else\n        format.html { render :edit }\n        format.json { render json: @schedule.errors, status: :unprocessable_entity }\n      end\n    end\n  end\n\n  # DELETE /schedules/1\n  # DELETE /schedules/1.json\n  def destroy\n    @schedule.destroy\n    respond_to do |format|\n      format.html { redirect_to schedules_url, notice: 'Schedule was successfully destroyed.' }\n      format.json { head :no_content }\n    end\n  end\n\n  def get_schedules\n    room_id = params[:room_id]\n    schedules = Schedule.where(room_id: room_id)\n    output = []\n    schedules.each { |s|\n      output.push(s)\n    }\n    render :json => output.to_json\n  end\n\n  private\n    # Use callbacks to share common setup or constraints between actions.\n    def set_schedule\n      @schedule = Schedule.find(params[:id])\n    end\n\n    # Never trust parameters from the scary internet, only allow the white list through.\n    def schedule_params\n      params.require(:schedule).permit(:salon_id, :start_time, :end_time, :recruitment_numbers, :notes)\n    end\n  end\n",
+			"file": "app/controllers/schedules_controller.rb",
+			"file_size": 2624,
+			"file_write_time": 131344842260000000,
 			"settings":
 			{
-				"buffer_size": 315,
+				"buffer_size": 2703,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/area.rb",
+			"file": "db/migrate/20170320120254_change_column_default_to_schedule.rb",
 			"settings":
 			{
-				"buffer_size": 123,
+				"buffer_size": 159,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/room.rb",
+			"file": "db/migrate/20170320004319_create_reservations.rb",
 			"settings":
 			{
-				"buffer_size": 53,
+				"buffer_size": 220,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/schedule.rb",
-			"settings":
-			{
-				"buffer_size": 58,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "",
 			"settings":
 			{
 				"buffer_size": 0,
@@ -275,7 +224,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 87.0,
+		"height": 167.0,
 		"last_filter": "install",
 		"selected_items":
 		[
@@ -284,16 +233,16 @@
 				"Package Control: Install Package"
 			],
 			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
 				"coffee",
 				"Coffee: Lint"
 			],
 			[
 				"install ",
 				"Package Control: Install Package"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
 			],
 			[
 				"INSTALL",
@@ -347,24 +296,50 @@
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/models",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/layouts",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/reservations",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules",
 		"/Users/taichi/PianoSalonPage/PianoSalon/bower_components",
+		"/Users/taichi/PianoSalonPage/PianoSalon/config",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate",
 		"/Users/taichi/PianoSalonPage/PianoSalon/log"
 	],
 	"file_history":
 	[
+		"/Users/taichi/Library/Application Support/Sublime Text 3/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
+		"/Users/taichi/Library/Application Support/Sublime Text 3/Packages/User/trailing_spaces.sublime-settings",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/area.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/schedule.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/room.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/reservation.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/user.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/schedules_controller.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/index.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170319152235_add_title_to_schedule.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/schedules.coffee",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/calendar.js.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/index.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/show.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/index.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/index.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320005752_create_reservations.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320004319_create_reservations.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320005636_drop_table_reservation.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320003546_add_schedule_id_to_reservation.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/show.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/new.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/rooms_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/salons_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/layouts/application.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/users/registrations_controller.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/schedules_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/config/application.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/_form.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/application.js",
@@ -375,28 +350,22 @@
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318062326_add_admin_and_name_and_tel_to_user.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318032556_create_notices.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318031948_add_approval_to_salon.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/rooms_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/manage.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/notice_show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/devise/registrations/new.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/devise/registrations/edit.html.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/calendar.html.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/schedules.coffee",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/stylesheets/application.css",
 		"/Users/taichi/PianoSalonPage/PianoSalon/vendor/assets/bower.json",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/notices.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/pages_controller.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/new.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/_form.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/_form.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170319052806_rename_column_name_to_salon.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/edit.html.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/edit.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/vendor/assets/.bowerrc",
 		"/Users/taichi/PianoSalonPage/PianoSalon/Bowerfile",
@@ -431,6 +400,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"@",
 			"optgroup",
 			"salon",
 			"attribute",
@@ -468,7 +438,7 @@
 	"groups":
 	[
 		{
-			"selected": 14,
+			"selected": 11,
 			"sheets":
 			[
 				{
@@ -477,15 +447,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 846,
+						"buffer_size": 1007,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								537,
-								537
+								586,
+								586
 							]
 						],
 						"settings":
@@ -499,7 +469,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -525,10 +495,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 331.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -557,40 +527,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "app/views/pages/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 748,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								66,
-								66
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app/views/rooms/_form.html.erb",
 					"semi_transient": false,
 					"settings":
@@ -602,8 +543,8 @@
 						"selection":
 						[
 							[
-								419,
-								419
+								359,
+								359
 							]
 						],
 						"settings":
@@ -617,100 +558,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/controllers/rooms_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1886,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								419,
-								419
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/rooms/new.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 85,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9,
-								9
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/rooms/show.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 247,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								57,
-								57
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 4,
 					"file": "app/views/salons/show.html.erb",
 					"semi_transient": false,
 					"settings":
@@ -732,44 +584,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 106.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/views/salons/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								310,
-								310
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 5,
 					"file": "app/controllers/areas_controller.rb",
 					"semi_transient": false,
 					"settings":
@@ -793,31 +615,62 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 586.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "app/views/areas/show.html.erb",
+					"buffer": 6,
+					"file": "app/views/schedules/_calendar.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 964,
+						"buffer_size": 1063,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								157,
-								157
+								843,
+								843
 							]
 						],
 						"settings":
 						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/schedules/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								328,
+								328
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
 							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -830,49 +683,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "app/views/schedules/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 595,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								467,
-								467
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
+					"buffer": 8,
 					"file": "app/controllers/schedules_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2059,
+						"buffer_size": 2703,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								251,
-								251
+								438,
+								438
 							]
 						],
 						"settings":
@@ -883,6 +707,64 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 14.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "db/migrate/20170320120254_change_column_default_to_schedule.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "db/migrate/20170320004319_create_reservations.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -890,247 +772,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "app/assets/javascripts/schedules.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 833,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								473,
-								473
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17845,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17845,
-								17845
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"tab_width": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "app/views/schedules/_calendar.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 332,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								332,
-								332
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "app/views/rooms/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 595,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								553,
-								553
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "app/models/user.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 315,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								315,
-								315
-							]
-						],
-						"settings":
-						{
-							"is_init_dirty_state": false,
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "app/models/area.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 123,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								118,
-								118
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "app/models/room.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 53,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								48,
-								48
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "app/models/schedule.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 58,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								53,
-								53
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
+					"buffer": 11,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1147,16 +789,13 @@
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1215,16 +854,20 @@
 		"selected_items":
 		[
 			[
+				"schedulecont",
+				"app/controllers/schedules_controller.rb"
+			],
+			[
+				"schecont",
+				"app/controllers/schedules_controller.rb"
+			],
+			[
 				"scheinde",
 				"app/views/schedules/index.html.erb"
 			],
 			[
 				"scheshow",
 				"app/views/schedules/show.html.erb"
-			],
-			[
-				"schecont",
-				"app/controllers/schedules_controller.rb"
 			],
 			[
 				"roomcont",
@@ -1303,7 +946,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 239.0,
+	"side_bar_width": 389.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

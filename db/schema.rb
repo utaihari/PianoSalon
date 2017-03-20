@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320005752) do
+ActiveRecord::Schema.define(version: 20170320120254) do
 
   create_table "areas", force: :cascade do |t|
     t.text     "area_name"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20170320005752) do
     t.integer  "salon_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "recruitment_numbers"
+    t.integer  "recruitment_numbers", default: 0
     t.text     "notes"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false

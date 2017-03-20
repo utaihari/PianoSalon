@@ -1,29 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%= @salon.salon_name %></h3>
+<p><%= link_to "サロンの紹介ページはこちら", salon_path(@salon.id) %></p>
+
 <p>
-  <strong>Salon:</strong>
-  <%= @schedule.salon_id %>
+  <strong>開始日時</strong>
+  <%= @schedule.start_time.to_s %>
 </p>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @schedule.start_time %>
+  <strong>終了日時</strong>
+  <%= @schedule.end_time.to_s %>
 </p>
 
 <p>
-  <strong>End time:</strong>
-  <%= @schedule.end_time %>
-</p>
-
-<p>
-  <strong>Recruitment numbers:</strong>
+  <strong>募集人数:</strong>
   <%= @schedule.recruitment_numbers %>
 </p>
 
 <p>
-  <strong>Notes:</strong>
+  <strong>注意事項:</strong>
   <%= @schedule.notes %>
 </p>
 
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', schedules_path %>
+<% if @is_closed %>
+<h4>このサロンは満員です。</h4>
+<button type="button" class="btn btn-primary">キャンセル待ちに登録する</button>
+<% else %>
+<button type="button" class="btn btn-primary">このサロンを予約する</button>
+<% end %>
+<br>
+<% if current_user.id == @salon.user_id %>
+<%= link_to '編集', edit_schedule_path(@schedule) %> |
+<% end %>
+<%= link_to '戻る', schedules_path %>
