@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
 	def index
 		@areas = Area.all
-		@next_schedules = Schedule.where(start_time: Time.zone.today .. Time.zone.today.next_month)
+		@next_schedules = Salon.joins(:user).joins(:schedules).where(\
+			:schedules => {start_time: Time.zone.today .. Time.zone.today.next_month}\
+			).select("schedules.id AS schedule_id, schedules.title AS title, schedules.start_time AS start_time, users.user_name AS user_name")
 	end
 
 	def show

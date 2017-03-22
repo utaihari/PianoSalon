@@ -1,0 +1,6 @@
+ja:
+  helpers:
+    submit:
+      schedule:
+        create: "部屋の予約をする"
+        update: "予約を編集する"

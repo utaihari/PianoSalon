@@ -1,19 +1,48 @@
 <p id="notice"><%= notice %></p>
-
+<% if current_user.id == @user.id  || current_user.id == @owner.id %>
 <p>
-  <strong>User:</strong>
-  <%= @reservation.user_id %>
+	<strong>予約申請者の名前:</strong>
+	<%= @user.user_name %>
 </p>
 
 <p>
-  <strong>Schedule:</strong>
-  <%= @reservation.schedule_id %>
+	<strong>開始日時</strong>
+	<%= @schedule.start_time.to_s %>
 </p>
 
 <p>
-  <strong>Condition:</strong>
-  <%= @reservation.condition %>
+	<strong>終了日時</strong>
+	<%= @schedule.end_time.to_s %>
 </p>
+
+<p>
+	<strong>募集人数:</strong>
+	<%= @schedule.recruitment_numbers %>
+</p>
+
+<p>
+	<strong>注意事項:</strong>
+	<%= @schedule.notes %>
+</p>
+
+<% if current_user.id == @user.id %>
+<p>
+	<strong>予約の状態:</strong>
+	<% if @reservation.condition == 0 %>
+	<p>承認待ちです。サロン講師が確認するまでしばらくお待ちください。</p>
+	<% elsif @reservation.condition == 1 %>
+	<p>予約が承認されました。当日サロンにてお待ちしております。</p>
+	<% else %>
+	<p>キャンセル待ち中です。予約に空きができましたらお知らせします。</p>
+	<% end %>
+</p>
+<% end %>
+
+<% if current_user.id == @owner.id %>
+<%= link_to "予約を承認する", reservation_approve(@reservation.id, true) %>
+<%= link_to "予約を取り消す", reservation_approve(@reservation.id, false) %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %>

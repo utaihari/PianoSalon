@@ -4,20 +4,96 @@
 		"selected_items":
 		[
 			[
+				"de",
+				"destroy"
+			],
+			[
+				"app",
+				"approve"
+			],
+			[
 				"res",
-				"reservations\t(routes.rb)"
+				"reservations"
+			],
+			[
+				"S",
+				"Salon"
 			],
 			[
 				"re",
-				"registrations"
+				"reservation"
 			],
 			[
 				"sche",
-				"schedule\t(index.html.erb)"
+				"schedule"
+			],
+			[
+				"des",
+				"description"
+			],
+			[
+				"desc",
+				"description\t(notice_show.html.erb)"
+			],
+			[
+				"con",
+				"condition"
+			],
+			[
+				"btn",
+				"btn-primary"
+			],
+			[
+				"start",
+				"start_time"
+			],
+			[
+				"star",
+				"start_time_array"
+			],
+			[
+				"calen",
+				"calendar-data\t(_calendar.html.erb)"
+			],
+			[
+				"red",
+				"redirect_to"
+			],
+			[
+				"is",
+				"is_closed"
 			],
 			[
 				"sc",
-				"schedules\t(routes.rb)"
+				"schedule"
+			],
+			[
+				"schedule",
+				"schedule_overlapping"
+			],
+			[
+				"Sche",
+				"ScheduleValidator"
+			],
+			[
+				"ex",
+				"exists"
+			],
+			[
+				"di",
+				"disabled\t(index.html.erb)"
+			],
+			[
+				"end",
+				"end_time"
+			],
+			[
+				"if",
+				"if\tERB if"
+			],
+			[
+				"is_",
+				"is_closed\t(schedules_controller.rb)"
 			],
 			[
 				"for",
@@ -26,10 +102,6 @@
 			[
 				"ca",
 				"calender\t(routes.rb)"
-			],
-			[
-				"start",
-				"start_time"
 			],
 			[
 				"ne",
@@ -48,10 +120,6 @@
 				"start_time"
 			],
 			[
-				"end",
-				"end_time\t(schedules_controller.rb)"
-			],
-			[
 				"get",
 				"get_schedules"
 			],
@@ -64,20 +132,8 @@
 				"notice_show\t(pages_controller.rb)"
 			],
 			[
-				"is",
-				"is_checked\t(pages_controller.rb)"
-			],
-			[
-				"des",
-				"description\t(rooms_controller.rb)"
-			],
-			[
 				"mana",
 				"manage_update"
-			],
-			[
-				"app",
-				"approval"
 			],
 			[
 				"req",
@@ -98,74 +154,43 @@
 			[
 				"user",
 				"user_id"
-			],
-			[
-				"desc",
-				"description"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "config/routes.rb",
+			"file": "app/assets/javascripts/schedules.coffee",
 			"settings":
 			{
-				"buffer_size": 1007,
+				"buffer_size": 2760,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/pages/show.html.erb",
+			"file": "app/controllers/schedules_controller.rb",
 			"settings":
 			{
-				"buffer_size": 1059,
+				"buffer_size": 4916,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/pages_controller.rb",
+			"file": "app/controllers/reservations_controller.rb",
 			"settings":
 			{
-				"buffer_size": 728,
+				"buffer_size": 3862,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/rooms/_form.html.erb",
+			"file": "app/views/pages/notice_show.html.erb",
 			"settings":
 			{
-				"buffer_size": 646,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/salons/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 883,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/areas_controller.rb",
-			"settings":
-			{
-				"buffer_size": 2137,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/schedules/_calendar.html.erb",
-			"settings":
-			{
-				"buffer_size": 1063,
+				"buffer_size": 98,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -174,45 +199,53 @@
 			"file": "app/views/schedules/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 493,
+				"buffer_size": 983,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "class SchedulesController < ApplicationController\n  before_action :set_schedule, only: [:show, :edit, :update, :destroy]\n\n  # GET /schedules\n  # GET /schedules.json\n  def index\n    @schedules = Schedule.all\n    @rooms = Room.all\n    @areas = Area.all\n  end\n\n  # GET /schedules/1\n  # GET /schedules/1.json\n  def show\n    @salon = Salon.find(@schedule.salon_id)\n    @current_reservations = Reservation.where(schedule_id: @schedule.id)\n    @\n  end\n\n  def calendar\n    @room = Room.find(params[:room_id])\n    @schedules = Schedule.where(room_id: params[:room_id], \\\n      start_time: Time.zone.today .. Time.zone.today.next_month.next_month)\n\n  end\n\n  # GET /schedules/new\n  def new\n    @salon = Salon.new\n    if params[:salon_id] != nil\n      @salon = Salon.find(params[:salon_id])\n    end\n    @schedule = Schedule.new(title: @salon.salon_name)\n  end\n\n  # GET /schedules/1/edit\n  def edit\n  end\n\n  # POST /schedules\n  # POST /schedules.json\n  def create\n    @schedule = Schedule.new(schedule_params)\n\n    respond_to do |format|\n      if @schedule.save\n        format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }\n        format.json { render :show, status: :created, location: @schedule }\n      else\n        format.html { render :new }\n        format.json { render json: @schedule.errors, status: :unprocessable_entity }\n      end\n    end\n  end\n\n  # PATCH/PUT /schedules/1\n  # PATCH/PUT /schedules/1.json\n  def update\n    respond_to do |format|\n      if @schedule.update(schedule_params)\n        format.html { redirect_to @schedule, notice: 'Schedule was successfully updated.' }\n        format.json { render :show, status: :ok, location: @schedule }\n      else\n        format.html { render :edit }\n        format.json { render json: @schedule.errors, status: :unprocessable_entity }\n      end\n    end\n  end\n\n  # DELETE /schedules/1\n  # DELETE /schedules/1.json\n  def destroy\n    @schedule.destroy\n    respond_to do |format|\n      format.html { redirect_to schedules_url, notice: 'Schedule was successfully destroyed.' }\n      format.json { head :no_content }\n    end\n  end\n\n  def get_schedules\n    room_id = params[:room_id]\n    schedules = Schedule.where(room_id: room_id)\n    output = []\n    schedules.each { |s|\n      output.push(s)\n    }\n    render :json => output.to_json\n  end\n\n  private\n    # Use callbacks to share common setup or constraints between actions.\n    def set_schedule\n      @schedule = Schedule.find(params[:id])\n    end\n\n    # Never trust parameters from the scary internet, only allow the white list through.\n    def schedule_params\n      params.require(:schedule).permit(:salon_id, :start_time, :end_time, :recruitment_numbers, :notes)\n    end\n  end\n",
-			"file": "app/controllers/schedules_controller.rb",
-			"file_size": 2624,
-			"file_write_time": 131344842260000000,
+			"file": "app/views/reservations/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 2703,
+				"buffer_size": 1019,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "db/migrate/20170320120254_change_column_default_to_schedule.rb",
+			"file": "app/views/areas/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 159,
+				"buffer_size": 983,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "db/migrate/20170320004319_create_reservations.rb",
+			"file": "app/views/areas/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 220,
+				"buffer_size": 618,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1357,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/rooms/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 649,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -224,8 +257,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 167.0,
-		"last_filter": "install",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -296,51 +329,64 @@
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/models",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/layouts",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/reservations",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules",
-		"/Users/taichi/PianoSalonPage/PianoSalon/bower_components",
+		"/Users/taichi/PianoSalonPage/PianoSalon/bin",
 		"/Users/taichi/PianoSalonPage/PianoSalon/config",
-		"/Users/taichi/PianoSalonPage/PianoSalon/db",
-		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate",
-		"/Users/taichi/PianoSalonPage/PianoSalon/log"
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate"
 	],
 	"file_history":
 	[
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/show.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/index.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/show.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/_form.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/pages_controller.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170322110139_create_pages.rb",
+		"/Users/taichi/Downloads/tp_biz29_brown/index.html",
+		"/Users/taichi/PianoSalonPage/PianoSalon/config/environments/development.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/schedule.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/new.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/config/routes.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/_calendar.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/index.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/config/application.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/show.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/schedules.coffee",
+		"/Users/taichi/PianoSalonPage/PianoSalon/Gemfile",
+		"/Users/taichi/PianoSalonPage/PianoSalon/config/initializers/time_formats.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/config/locales/ja.yml",
+		"/Users/taichi/PianoSalonPage/PianoSalon/config/locales/models/ja.yml",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/areas_controller.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/show.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/_form.html.erb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320120254_change_column_default_to_schedule.rb",
+		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320004319_create_reservations.rb",
 		"/Users/taichi/Library/Application Support/Sublime Text 3/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
 		"/Users/taichi/Library/Application Support/Sublime Text 3/Packages/User/trailing_spaces.sublime-settings",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/area.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/schedule.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/room.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/reservation.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/models/user.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/schedules_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170319152235_add_title_to_schedule.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/schedules.coffee",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/calendar.js.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/schedules/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/index.html.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320005752_create_reservations.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320004319_create_reservations.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320005636_drop_table_reservation.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170320003546_add_schedule_id_to_reservation.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/new.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/rooms_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/salons_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/layouts/application.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/users/registrations_controller.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/config/application.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/show.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/_form.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/application.js",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318022337_create_schedules.rb",
@@ -358,24 +404,19 @@
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/stylesheets/application.css",
 		"/Users/taichi/PianoSalonPage/PianoSalon/vendor/assets/bower.json",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/notices.html.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/pages/show.html.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/controllers/pages_controller.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/new.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/index.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/_form.html.erb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/rooms/_form.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170319052806_rename_column_name_to_salon.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/salons/edit.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/views/areas/edit.html.erb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/vendor/assets/.bowerrc",
 		"/Users/taichi/PianoSalonPage/PianoSalon/Bowerfile",
-		"/Users/taichi/PianoSalonPage/PianoSalon/Gemfile",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/components/draft.js.jsx",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/components.js",
 		"/Users/taichi/PianoSalonPage/PianoSalon/app/assets/javascripts/underscore-min.js",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318105751_create_reservations.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318090643_add_room_name_to_room.rb",
-		"/Users/taichi/PianoSalonPage/PianoSalon/config/environments/development.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318084634_rename_name_to_area.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/db/migrate/20170318073638_rename_name_to_user.rb",
 		"/Users/taichi/PianoSalonPage/PianoSalon/config/initializers/devise.rb",
@@ -400,6 +441,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"current_user.admin",
+			"reservation_create",
+			"\"",
+			"start",
+			"schedule",
+			"start",
+			"st_array",
+			"start",
 			"@",
 			"optgroup",
 			"salon",
@@ -438,149 +487,29 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config/routes.rb",
+					"file": "app/assets/javascripts/schedules.coffee",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1007,
+						"buffer_size": 2760,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								586,
-								586
+								472,
+								472
 							]
 						],
 						"settings":
 						{
-							"is_init_dirty_state": false,
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/pages/show.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1059,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								848,
-								848
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/controllers/pages_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 728,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/rooms/_form.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 646,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								359,
-								359
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/salons/show.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 883,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								309,
-								309
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -591,112 +520,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/controllers/areas_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2070,
-								2070
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/schedules/_calendar.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1063,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								843,
-								843
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/schedules/show.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 493,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								328,
-								328
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 1,
 					"file": "app/controllers/schedules_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2703,
+						"buffer_size": 4916,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								438,
-								438
+								737,
+								737
 							]
 						],
 						"settings":
@@ -707,76 +544,50 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 14.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "db/migrate/20170320120254_change_column_default_to_schedule.rb",
+					"buffer": 2,
+					"file": "app/controllers/reservations_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 159,
+						"buffer_size": 3862,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								159,
-								159
+								3471,
+								3471
 							]
 						],
 						"settings":
 						{
 							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 947.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "db/migrate/20170320004319_create_reservations.rb",
-					"semi_transient": false,
+					"buffer": 3,
+					"file": "app/views/pages/notice_show.html.erb",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 220,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								220,
-								220
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
+						"buffer_size": 98,
 						"regions":
 						{
 						},
@@ -789,13 +600,190 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/schedules/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								96,
+								96
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/reservations/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1019,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826,
+								826
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 76.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/areas/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								829,
+								829
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/areas/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "config/routes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1357,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/views/rooms/_form.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								628,
+								628
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -836,6 +824,10 @@
 	{
 		"height": 179.0
 	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -854,20 +846,56 @@
 		"selected_items":
 		[
 			[
-				"schedulecont",
+				"res",
+				"app/controllers/reservations_controller.rb"
+			],
+			[
+				"resshow",
+				"app/views/reservations/show.html.erb"
+			],
+			[
+				"sche",
 				"app/controllers/schedules_controller.rb"
+			],
+			[
+				"reser",
+				"app/controllers/reservations_controller.rb"
+			],
+			[
+				"scheshow",
+				"app/views/schedules/show.html.erb"
+			],
+			[
+				"pagecont",
+				"app/controllers/pages_controller.rb"
+			],
+			[
+				"pageinde",
+				"app/views/pages/index.html.erb"
+			],
+			[
+				"pageindex",
+				"app/views/pages/index.html.erb"
+			],
+			[
+				"pageshow",
+				"app/views/pages/show.html.erb"
 			],
 			[
 				"schecont",
 				"app/controllers/schedules_controller.rb"
 			],
 			[
-				"scheinde",
-				"app/views/schedules/index.html.erb"
+				"schenew",
+				"app/views/schedules/new.html.erb"
 			],
 			[
-				"scheshow",
-				"app/views/schedules/show.html.erb"
+				"schedulecont",
+				"app/controllers/schedules_controller.rb"
+			],
+			[
+				"scheinde",
+				"app/views/schedules/index.html.erb"
 			],
 			[
 				"roomcont",
@@ -880,14 +908,6 @@
 			[
 				"salonindex",
 				"app/views/salons/index.html.erb"
-			],
-			[
-				"pagecont",
-				"app/controllers/pages_controller.rb"
-			],
-			[
-				"pageshow",
-				"app/views/pages/show.html.erb"
 			],
 			[
 				"contsalo",
@@ -946,7 +966,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 389.0,
+	"side_bar_width": 276.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

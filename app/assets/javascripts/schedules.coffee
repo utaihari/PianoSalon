@@ -9,6 +9,7 @@ $( ->
 	$children = $('#room-select')
 	#都道府県の要素を変数に入れます。
 	original = $children.html()
+	@room_id = $('#calendar-data').data('room_id')
 
 	$('#area-select').change ->
 		#選択された地方のvalueを取得し変数に入れる
@@ -32,4 +33,66 @@ $( ->
 	$('#schedule_salon_id').change ->
 		$('#schedule_title').val($('#schedule_salon_id').text())
 		return
+
+	$('#schedule_start_time_1i').change ->
+		console.log("changed")
+		check_overlap()
+		return
+	$('#schedule_start_time_2i').change ->
+		check_overlap()
+		return
+	$('#schedule_start_time_3i').change ->
+		check_overlap()
+		return
+	$('#schedule_start_time_4i').change ->
+		check_overlap()
+		return
+	$('#schedule_start_time_5i').change ->
+		check_overlap()
+		return
+
+	$('#schedule_end_time_1i').change ->
+		check_overlap()
+		return
+	$('#schedule_end_time_2i').change ->
+		check_overlap()
+		return
+	$('#schedule_end_time_3i').change ->
+		check_overlap()
+		return
+	$('#schedule_end_time_4i').change ->
+		check_overlap()
+		return
+	$('#schedule_end_time_5i').change ->
+		check_overlap()
+		return
 )
+
+check_overlap = ->
+	@room_id = $('#calendar-data').data('room_id')
+	start_time = get_start_time()
+	end_time = get_end_time()
+	$.getJSON("/schedules/check_overlap/#{@room_id}/#{start_time}/#{end_time}", (data) ->
+		console.log(data)
+		if data
+			$('#schedule-errors').html("<font color=\"red\">この時間の予約はできません</font>")
+			$('#schedule-submit').prop("disabled", true);
+		else
+			$('#schedule-errors').html("")
+			$('#schedule-submit').prop("disabled", false);
+		)
+	return
+get_start_time = ->
+	year = $('#schedule_start_time_1i').val()
+	month = $('#schedule_start_time_2i').val()
+	day = $('#schedule_start_time_3i').val()
+	hour = $('#schedule_start_time_4i').val()
+	min = $('#schedule_start_time_5i').val()
+	return "#{year}, #{month}, #{day}, #{hour}, #{min}"
+get_end_time = ->
+	year = $('#schedule_end_time_1i').val()
+	month = $('#schedule_end_time_2i').val()
+	day = $('#schedule_end_time_3i').val()
+	hour = $('#schedule_end_time_4i').val()
+	min = $('#schedule_end_time_5i').val()
+	return "#{year}, #{month}, #{day}, #{hour}, #{min}"

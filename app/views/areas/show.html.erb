@@ -41,7 +41,7 @@
   </tbody>
 </table>
 
-<% if current_user.admin %>
+<% if user_signed_in? && current_user.admin %>
 <%= link_to "部屋を追加", new_room_from_area_path(@area.id) %>
 <br>
 <%= link_to '編集', edit_area_path(@area) %>

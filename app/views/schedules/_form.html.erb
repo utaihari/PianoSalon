@@ -1,3 +1,4 @@
+<div id="calendar-data" style="display: none;" data-room_id=<%= @room.id %>></div>
 <%= form_for(schedule) do |f| %>
 <% if schedule.errors.any? %>
 <div id="error_explanation">
@@ -19,6 +20,11 @@
 <div class="field">
   <%= f.hidden_field :title, :readonly => true%>
 </div>
+<div class="field">
+  <%= f.hidden_field :room_id, :readonly => true%>
+</div>
+
+<div id="schedule-errors"></div>
 
 <div class="field">
   <%= f.label :開始日時 %>
@@ -41,6 +47,50 @@
 </div>
 
 <div class="actions">
-  <%= f.submit %>
+  <%= f.submit :id => "schedule-submit" %>
 </div>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    check_overlap();
+  });
+  var check_overlap, get_end_time, get_start_time;
+
+  check_overlap = function() {
+    var end_time, start_time;
+    this.room_id = $('#calendar-data').data('room_id');
+    start_time = get_start_time();
+    end_time = get_end_time();
+    $.getJSON("/schedules/check_overlap/" + this.room_id + "/" + start_time + "/" + end_time, function(data) {
+      console.log(data);
+      if (data) {
+        $('#schedule-errors').html("<font color=\"red\">この時間の予約はできません</font>");
+        return $('#schedule-submit').prop("disabled", true);
+      } else {
+        $('#schedule-errors').html("");
+        return $('#schedule-submit').prop("disabled", false);
+      }
+    });
+  };
+
+  get_start_time = function() {
+    var day, hour, min, month, year;
+    year = $('#schedule_start_time_1i').val();
+    month = $('#schedule_start_time_2i').val();
+    day = $('#schedule_start_time_3i').val();
+    hour = $('#schedule_start_time_4i').val();
+    min = $('#schedule_start_time_5i').val();
+    return year + ", " + month + ", " + day + ", " + hour + ", " + min;
+  };
+
+  get_end_time = function() {
+    var day, hour, min, month, year;
+    year = $('#schedule_end_time_1i').val();
+    month = $('#schedule_end_time_2i').val();
+    day = $('#schedule_end_time_3i').val();
+    hour = $('#schedule_end_time_4i').val();
+    min = $('#schedule_end_time_5i').val();
+    return year + ", " + month + ", " + day + ", " + hour + ", " + min;
+  };
+</script>

@@ -6,7 +6,7 @@
 	<%= raw @room.description %>
 </p>
 
-<% if current_user.admin %>
+<% if user_signed_in? && current_user.admin %>
 <%= link_to '編集', edit_room_path(@room) %> |
 <% end %>
 <%= link_to 'Back', rooms_path %>

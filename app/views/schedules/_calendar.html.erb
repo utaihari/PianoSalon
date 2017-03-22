@@ -16,21 +16,18 @@
 				title:  "<%= schedule.title %>",
 				start: "<%= schedule.start_time.to_s(:db) %>",
 				end: "<%= schedule.end_time.to_s(:db) %>"
-			}
+			},
 			<% end %>
 
 			],
 			dayClick: function(date, jsEvent, view) {
 				<% if @has_salon %>
-				window.location.href = "/schedules/new/"+ date.format();
+				// window.location.href = "/schedules/new/"+ date.format();
+				window.location.href=  "/schedules/new/<%= room.id %>/"+ date.format();
 				<% else %>
 				<% end %>
 			},
 			eventClick: function(calEvent, jsEvent, view) {
-
-				alert('Event: ' + calEvent.title);
-				alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-				alert('View: ' + view.name);
 				window.location.href = "/schedules/"+ calEvent.id;
 
         		// change the border color just for fun
@@ -41,5 +38,8 @@
 	});
 
 </script>
+<div id="calendar-data" style="display: none;" data-room_id=<%= room.id %>></div>
 <p><%= room.room_name %>のスケジュールカレンダー</p>
+<p><%= link_to "#{room.room_name}の紹介はこちら", room_path(room.id),:target=>["_blank"] %></p>
+<p>部屋を予約するには日時をクリックしてください。</p>
 <div id="calendar"></div>

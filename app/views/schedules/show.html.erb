@@ -1,34 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <h3><%= @salon.salon_name %></h3>
+<p>講師： <%= @owner.user_name %></p>
 <p><%= link_to "サロンの紹介ページはこちら", salon_path(@salon.id) %></p>
 
 <p>
-  <strong>開始日時</strong>
-  <%= @schedule.start_time.to_s %>
+	<strong>開始日時</strong>
+	<%= @schedule.start_time.to_s %>
 </p>
 
 <p>
-  <strong>終了日時</strong>
-  <%= @schedule.end_time.to_s %>
+	<strong>終了日時</strong>
+	<%= @schedule.end_time.to_s %>
 </p>
 
 <p>
-  <strong>募集人数:</strong>
-  <%= @schedule.recruitment_numbers %>
+	<strong>募集人数:</strong>
+	<%= @schedule.recruitment_numbers %>
 </p>
 
 <p>
-  <strong>注意事項:</strong>
-  <%= @schedule.notes %>
+	<strong>注意事項:</strong>
+	<%= @schedule.notes %>
 </p>
 
+<% if @reserved != nil %>
+<h4>あなたはこのサロンを予約済みです。</h4>
+<%= link_to "予約を取り消す", reservation_path(@reserved.id), class: "btn btn-primary" %>
+<% else %>
 <% if @is_closed %>
 <h4>このサロンは満員です。</h4>
-<button type="button" class="btn btn-primary">キャンセル待ちに登録する</button>
+<%= link_to "キャンセル待ちに登録する", reservation_create_path(@schedule.id), class: "btn btn-primary" %>
 <% else %>
-<button type="button" class="btn btn-primary">このサロンを予約する</button>
+<%= link_to "このサロンを予約する", reservation_create_path(@schedule.id), class: "btn btn-primary" %>
 <% end %>
+<% end %>
+
+
 <br>
 <% if current_user.id == @salon.user_id %>
 <%= link_to '編集', edit_schedule_path(@schedule) %> |

@@ -215,6 +215,7 @@ DEPENDENCIES
   fullcalendar-rails
   geocoder
   gmaps4rails
+  i18n
   jbuilder (~> 2.5)
   jquery-rails
   less-rails!

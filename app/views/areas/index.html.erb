@@ -16,7 +16,7 @@
     <tr>
       <td><%= link_to area.area_name, area %></td>
       <td><%= area.address %></td>
-      <% if current_user.admin %>
+      <% if user_signed_in? && current_user.admin %>
       <td><%= link_to 'Edit', edit_area_path(area) %></td>
       <td><%= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>

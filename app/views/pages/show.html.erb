@@ -23,7 +23,7 @@
 <%= link_to "すべてのお知らせ", notices_path %>
 <br>
 
-<% if current_user.admin %>
+<% if user_signed_in? && current_user.admin %>
 <% if !@unapproved_sarons.blank? %>
 <h2>未認可のサロン</h2>
 <table class="table">

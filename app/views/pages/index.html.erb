@@ -1,6 +1,6 @@
 <h1>ピアノサロン・ローズ</h1>
 <ul>
-	<li><%= link_to "スケジュールカレンダー", schedules_path %></li>
+	<li><%= link_to "部屋の予約はこちら", schedules_path %></li>
 	<% if !@areas.blank? %>
 	<% for area in @areas %>
 	<li><%= link_to area.area_name, area_path(area.id) %></li>
@@ -8,9 +8,10 @@
 	<% else %>
 
 	<% end %>
+	<% if user_signed_in? && current_user.admin %>
 	<li><%= link_to "ホール一覧", areas_path %></li>
 	<li><%= link_to "サロン一覧", salons_path %></li>
-
+	<% end %>
 	<div>
 		<h4>近日中のサロン開催予定</h4>
 		<% if !@next_schedules.blank? %>
@@ -19,15 +20,16 @@
 				<tr>
 					<th>サロン</th>
 					<th>開催日時</th>
-					<th colspan="3"></th>
+					<th>講師</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<% @next_schedules.each do |schedule| %>
 				<tr>
-					<td><%= link_to schedule.title, schedule_path(schedule.id) %></td>
+					<td><%= link_to schedule.title, schedule_path(schedule.schedule_id) %></td>
 					<td><%= schedule.start_time %></td>
+					<td><%= schedule.user_name %></td>
 				</tr>
 				<% end %>
 			</tbody>

@@ -73,3 +73,6 @@ gem 'bower-rails'
 #editor
 gem 'wysiwyg-rails'
 gem "font-awesome-rails"
+
+#japanize
+gem 'i18n'
